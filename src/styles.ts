@@ -32,7 +32,7 @@ const GlocalCss = createGlobalStyle`
   .centralizer {
     max-width: 80rem;
     width: 100%;
-    margin: 10rem auto 0;
+    margin: 5.6rem auto 0;
     border-radius: 1rem;
     box-shadow: 2rem 2rem 3rem black;
     background-color: ${colors.darkGray};
