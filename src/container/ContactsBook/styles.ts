@@ -4,6 +4,8 @@ import { colors } from '../../styles'
 export const TableWrapper = styled.div`
   max-height: 36rem;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: ${colors.lightGray} transparent;
 `
 export const Table = styled.table`
   max-width: 72rem;
@@ -41,4 +43,10 @@ export const TableTitle = styled.th`
 
 export const TableFooter = styled.tfoot`
   padding: 5rem 0;
+`
+
+export const ActionButtons = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 `

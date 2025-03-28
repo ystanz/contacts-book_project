@@ -1,15 +1,28 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import addContactImg from '../../assets/images/contact_icon2.png'
 import { FormButtonAdd, FormInput, FormWrapper } from './styles'
 
 interface FormProps {
   onAddContact: (name: string, number: string, email: string) => void
+  editingContact: {
+    name: string
+    email: string
+    number: string
+  } | null
 }
 
-const Form = ({ onAddContact }: FormProps) => {
+const Form = ({ onAddContact, editingContact }: FormProps) => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [number, setNumber] = useState('')
+
+  useEffect(() => {
+    if (editingContact) {
+      setName(editingContact.name)
+      setEmail(editingContact.email)
+      setNumber(editingContact.number)
+    }
+  }, [editingContact])
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -49,7 +62,11 @@ const Form = ({ onAddContact }: FormProps) => {
         required
       />
       <FormButtonAdd type="submit">
-        <img src={addContactImg} alt="Ícone de adicionar um contato" />
+        {editingContact ? (
+          'Atualizar'
+        ) : (
+          <img src={addContactImg} alt="Ícone de adicionar um contato" />
+        )}
       </FormButtonAdd>
     </FormWrapper>
   )
