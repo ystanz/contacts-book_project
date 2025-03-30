@@ -1,11 +1,15 @@
+import { Provider } from 'react-redux'
 import Home from './pages/Home'
 import GlocalCss from './styles'
+import store from './store'
 
 function App() {
   return (
     <>
-      <GlocalCss />
-      <Home />
+      <Provider store={store}>
+        <GlocalCss />
+        <Home />
+      </Provider>
     </>
   )
 }
