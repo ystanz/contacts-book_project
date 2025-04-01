@@ -1,6 +1,6 @@
 import ContactsBook from '../../container/ContactsBook'
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <div>
       <ContactsBook />

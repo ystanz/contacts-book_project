@@ -30,7 +30,8 @@ export default [
         {
           singleQuote: true,
           trailingComma: 'none',
-          semi: false
+          semi: false,
+          printWidth: 110
         }
       ]
     }

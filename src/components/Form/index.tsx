@@ -1,34 +1,42 @@
+import { useDispatch } from 'react-redux'
 import { useEffect, useState } from 'react'
-import addContactImg from '../../assets/images/contact_icon2.png'
+import { AppDispatch } from '../../store'
 import { FormButtonAdd, FormInput, FormWrapper } from './styles'
+import addContactImg from '../../assets/images/contact_icon2.png'
+import { addContact, updateContact } from '../../store/reducers/contactsSlice'
+import { Contact } from '../../types/contact'
 
-interface FormProps {
-  onAddContact: (name: string, number: string, email: string) => void
-  editingContact: {
-    name: string
-    email: string
-    number: string
-  } | null
+interface ContactFormProps {
+  editingContact?: Contact | null
+  clearEditingContact: () => void
 }
 
-const Form = ({ onAddContact, editingContact }: FormProps) => {
+const Form = ({ editingContact, clearEditingContact }: ContactFormProps) => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [number, setNumber] = useState('')
+  const dispatch = useDispatch<AppDispatch>()
 
   useEffect(() => {
     if (editingContact) {
       setName(editingContact.name)
       setEmail(editingContact.email)
       setNumber(editingContact.number)
+    } else {
+      setName('')
+      setEmail('')
+      setNumber('')
     }
   }, [editingContact])
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-
-    onAddContact(name, email, number)
-
+    if (editingContact) {
+      dispatch(updateContact({ id: editingContact.id, name, email, number }))
+      clearEditingContact()
+    } else {
+      dispatch(addContact({ name, email, number }))
+    }
     setName('')
     setEmail('')
     setNumber('')
@@ -62,12 +70,9 @@ const Form = ({ onAddContact, editingContact }: FormProps) => {
         required
       />
       <FormButtonAdd type="submit">
-        {editingContact ? (
-          'Atualizar'
-        ) : (
-          <img src={addContactImg} alt="Ícone de adicionar um contato" />
-        )}
+        {editingContact ? 'Atualizar' : <img src={addContactImg} alt="Ícone de adicionar um contato" />}
       </FormButtonAdd>
+      {editingContact && <button onClick={clearEditingContact}>Cancelar</button>}
     </FormWrapper>
   )
 }
