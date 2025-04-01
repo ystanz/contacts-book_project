@@ -10,17 +10,22 @@ export const Button = styled.button`
     fill: ${colors.lightGray};
     width: 2.4rem;
     height: 2.4rem;
+    transition: all ease-in-out 0.2s;
+    &:hover {
+      transform: scale(1.07);
+      filter: brightness(1.2);
+    }
   }
 
   .editButton {
     &:hover {
-      fill: yellow;
+      fill: ${colors.editIcon};
     }
   }
 
   .removeButton {
     &:hover {
-      fill: red;
+      fill: ${colors.removeIcon};
     }
   }
 `

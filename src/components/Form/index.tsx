@@ -1,10 +1,11 @@
 import { useDispatch } from 'react-redux'
 import { useEffect, useState } from 'react'
 import { AppDispatch } from '../../store'
-import { FormButtonAdd, FormInput, FormWrapper } from './styles'
+import { ActionButons, FormButton, FormInput, FormWrapper } from './styles'
 import addContactImg from '../../assets/images/contact_icon2.png'
 import { addContact, updateContact } from '../../store/reducers/contactsSlice'
 import { Contact } from '../../types/contact'
+import { CancelButton, UpdateButton } from '../Buttons'
 
 interface ContactFormProps {
   editingContact?: Contact | null
@@ -69,10 +70,16 @@ const Form = ({ editingContact, clearEditingContact }: ContactFormProps) => {
         onChange={(e) => setNumber(e.target.value)}
         required
       />
-      <FormButtonAdd type="submit">
-        {editingContact ? 'Atualizar' : <img src={addContactImg} alt="Ícone de adicionar um contato" />}
-      </FormButtonAdd>
-      {editingContact && <button onClick={clearEditingContact}>Cancelar</button>}
+      <ActionButons>
+        <FormButton type="submit">
+          {editingContact ? (
+            <UpdateButton />
+          ) : (
+            <img src={addContactImg} alt="Ícone de adicionar um contato" />
+          )}
+        </FormButton>
+        {editingContact && <CancelButton onClick={clearEditingContact} />}
+      </ActionButons>
     </FormWrapper>
   )
 }

@@ -4,7 +4,9 @@ import backgroundImage from './assets/images/background.jpg'
 export const colors = {
   white: '#F2F0C9',
   darkGray: '#262626',
-  lightGray: '#595959'
+  lightGray: '#595959',
+  editIcon: '#deba6f',
+  removeIcon: '#823038'
 }
 
 const GlocalCss = createGlobalStyle`
@@ -30,9 +32,10 @@ const GlocalCss = createGlobalStyle`
   }
 
   .centralizer {
-    max-width: 80rem;
+    max-width: 88rem;
     width: 100%;
     margin: 5.6rem auto 0;
+    padding: 0 4.8rem;
     border-radius: 1rem;
     box-shadow: 2rem 2rem 3rem black;
     background-color: ${colors.darkGray};

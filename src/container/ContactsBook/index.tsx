@@ -1,12 +1,12 @@
 import { useSelector, useDispatch } from 'react-redux'
+import { useState } from 'react'
 import { RootState } from '../../store'
 import { removeContact } from '../../store/reducers/contactsSlice'
-import { EditButton, RemoveButton } from '../../components/Buttons'
-import Form from '../../components/Form'
 import Header from '../../components/Header'
-import { ActionButtons, Table, TableFooter, TableTitle, TableWrapper } from './styles'
-import { useState } from 'react'
+import Form from '../../components/Form'
+import { EditButton, RemoveButton } from '../../components/Buttons'
 import { Contact } from '../../types/contact'
+import { ActionButtons, Table, TableFooter, TableTitle, TableWrapper } from './styles'
 
 const ContactsBook: React.FC = () => {
   const [editingContact, setEditingContact] = useState<Contact | null>(null)

@@ -23,7 +23,7 @@ export const FormInput = styled.input`
   text-align: center;
 `
 
-export const FormButtonAdd = styled.button`
+export const FormButton = styled.button`
   background: none;
   border: none;
   cursor: pointer;
@@ -32,4 +32,11 @@ export const FormButtonAdd = styled.button`
     max-height: 3.5rem;
     height: 100%;
   }
+`
+
+export const ActionButons = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
 `
