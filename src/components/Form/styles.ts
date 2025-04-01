@@ -11,16 +11,27 @@ export const FormWrapper = styled.form`
   input[name='contact-number'] {
     width: 16rem;
   }
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: start;
+  }
 `
 
 export const FormInput = styled.input`
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   background-color: ${colors.lightGray};
   border-radius: 0.8rem;
   border: none;
   width: 24rem;
   height: 2.4rem;
   text-align: center;
+
+  @media (max-width: 767px) {
+    font-size: 1.2rem;
+    width: 100%;
+  }
 `
 
 export const FormButton = styled.button`
@@ -36,7 +47,11 @@ export const FormButton = styled.button`
 
 export const ActionButons = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
   gap: 0.8rem;
+
+  @media (max-width: 767px) {
+    align-self: flex-end;
+  }
 `

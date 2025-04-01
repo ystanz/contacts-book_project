@@ -5,6 +5,10 @@ export const HeaderWrapper = styled.header`
   justify-content: center;
   align-items: center;
   padding: 2rem 0;
+
+  @media (max-width: 767px) {
+    padding: 1rem 0;
+  }
 `
 export const HeaderTitle = styled.h1`
   font-size: 2.4rem;

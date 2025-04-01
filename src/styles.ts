@@ -40,6 +40,14 @@ const GlocalCss = createGlobalStyle`
     box-shadow: 2rem 2rem 3rem black;
     background-color: ${colors.darkGray};
   }
+
+  @media (max-width: 767px) {
+    .centralizer {
+      width: 90%;
+      padding: 0 .8rem;
+      margin: 3.2rem auto 0;
+    }
+  }
 `
 
 export default GlocalCss
