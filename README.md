@@ -1,54 +1,62 @@
-# React + TypeScript + Vite
+# Contacts Book - Agenda de Contatos 📒
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Agenda de contatos desenvolvida com React, TypeScript e Redux. Permite cadastrar, editar e excluir contatos de forma simples e intuitiva. O projeto foca na organização dos dados e no gerenciamento eficiente de estados.
 
-Currently, two official plugins are available:
+🔗 [Acesse a aplicação online](https://contacts-book-project.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧰 Tecnologias Utilizadas
 
-## Expanding the ESLint configuration
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [Styled-Components](https://styled-components.com/)
+- [React Router DOM](https://reactrouter.com/)
+- [Vite](https://vitejs.dev/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ⚙️ Como Executar o Projeto Localmente
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname
-    }
-  }
-})
-```
+1. **Clone o repositório:**
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+   ```bash
+   git clone https://github.com/ystanz/contacts-book_project.git
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2. **Acesse o diretório do projeto:**
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules
-  }
-})
-```
+   ```bash
+   cd contacts-book_project
+   ```
+
+3. **Instale as dependências:**
+
+   ```bash
+   npm install
+   ```
+
+4. **Inicie o servidor de desenvolvimento:**
+
+   ```bash
+   npm run dev
+   ```
+
+## ✨ Funcionalidades
+
+- Adicionar novos contatos com nome, e-mail e telefone.
+- Editar e atualizar os dados de contatos existentes.
+- Excluir contatos da lista.
+- Interface responsiva e moderna.
+- Gerenciamento de estado com Redux Toolkit.
+
+## 🚀 Deploy
+
+A aplicação está hospedada na Vercel:
+
+👉 [https://contacts-book-project.vercel.app](https://contacts-book-project.vercel.app)
+
+## 📄 Licença
+
+Este projeto está licenciado sob a Licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 👤 Autor
+
+Desenvolvido por [ystanz](https://github.com/ystanz).
