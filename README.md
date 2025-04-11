@@ -2,7 +2,7 @@
 
 Agenda de contatos desenvolvida com React, TypeScript e Redux. Permite cadastrar, editar e excluir contatos de forma simples e intuitiva. O projeto foca na organização dos dados e no gerenciamento eficiente de estados.
 
-🔗 [Acesse a aplicação online](https://contacts-book-project.vercel.app)
+🔗 [Acesse a aplicação online](https://contacts-book-liard.vercel.app/)
 
 ## 🧰 Tecnologias Utilizadas
 
